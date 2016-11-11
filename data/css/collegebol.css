@@ -1,0 +1,13 @@
+
+.mainDiv {
+    margin-top: 51px;
+}
+.poll-panel
+{
+    position:relative;
+    border-top-width: 80px;
+    margin-top: 20px;
+}
+.poll-body {
+    margin-top: 20px;
+}

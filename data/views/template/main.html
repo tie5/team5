@@ -1,0 +1,231 @@
+<div class="container-fluid" style="position:relative; top:15%;">
+    <div class="row">
+        <!--<div class="col-xs-12 col-sm-3 poll-panel ">
+
+<div class="panel panel-info z-depth-3">
+<div class="panel-heading">Polls</div>
+<div class="panel-body">
+<ul style="list-style: none;">
+<li><a href="#" id="trending">
+<i id="icon" class="fa fa-line-chart" style="text-shadow: rgb(179, 179, 179) 0px 0px 0px, rgb(185, 185, 185) 1px 1px 0px, rgb(192, 192, 192) 2px 2px 0px, rgb(199, 199, 199) 3px 3px 0px, rgb(206, 206, 206) 4px 4px 0px, rgb(213, 213, 213) 5px 5px 0px, rgb(220, 220, 220) 6px 6px 0px, rgb(227, 227, 227) 7px 7px 0px, rgb(234, 234, 234) 8px 8px 0px, rgb(241, 241, 241) 9px 9px 0px, rgb(248, 248, 248) 10px 10px 0px; font-size: 37px; color: rgb(161, 183, 255); height: 69px; width: 69px; line-height: 69px; border-radius: ; text-align: center; background-color: rgb(255, 255, 255);"></i> 
+Trending Now</a></li>
+<li><br></li>
+<li><a href="#" id="trending">
+<i id="icon" class="fa fa-sort" style="text-shadow: rgb(179, 179, 179) 0px 0px 0px, rgb(186, 186, 186) 1px 1px 0px, rgb(194, 194, 194) 2px 2px 0px, rgb(201, 201, 201) 3px 3px 0px, rgb(209, 209, 209) 4px 4px 0px, rgb(217, 217, 217) 5px 5px 0px, rgb(224, 224, 224) 6px 6px 0px, rgb(232, 232, 232) 7px 7px 0px, rgb(240, 240, 240) 8px 8px 0px, rgb(247, 247, 247) 9px 9px 0px; font-size: 37px; color: rgb(161, 183, 255); height: 69px; width: 69px; line-height: 69px; border-radius: ; text-align: center; background-color: rgb(255, 255, 255);"></i> 
+Newest First</a></li>
+<li><br></li>
+<li><a href="#" id="trending"><i id="icon" class="fa fa-star" style="text-shadow: rgb(179, 179, 179) 0px 0px 0px, rgb(186, 186, 186) 1px 1px 0px, rgb(194, 194, 194) 2px 2px 0px, rgb(201, 201, 201) 3px 3px 0px, rgb(209, 209, 209) 4px 4px 0px, rgb(217, 217, 217) 5px 5px 0px, rgb(224, 224, 224) 6px 6px 0px, rgb(232, 232, 232) 7px 7px 0px, rgb(240, 240, 240) 8px 8px 0px, rgb(247, 247, 247) 9px 9px 0px; font-size: 37px; color: rgb(161, 183, 255); height: 69px; width: 69px; line-height: 69px; border-radius: ; text-align: center; background-color: rgb(255, 255, 255);"></i>  Popular</a></li>
+<li><br></li>
+<li><a href="#" id="yourPost"><i id="icon" class="fa fa-street-view" style="text-shadow: rgb(179, 179, 179) 0px 0px 0px, rgb(186, 186, 186) 1px 1px 0px, rgb(194, 194, 194) 2px 2px 0px, rgb(201, 201, 201) 3px 3px 0px, rgb(209, 209, 209) 4px 4px 0px, rgb(217, 217, 217) 5px 5px 0px, rgb(224, 224, 224) 6px 6px 0px, rgb(232, 232, 232) 7px 7px 0px, rgb(240, 240, 240) 8px 8px 0px, rgb(247, 247, 247) 9px 9px 0px; font-size: 37px; color: rgb(161, 183, 255); height: 69px; width: 69px; line-height: 69px; border-radius: ; text-align: center; background-color: rgb(255, 255, 255);"></i> 
+Your Post</a></li>
+<li><br></li>
+</ul>
+</div>
+</div>
+</div>-->
+
+        <!--<div class="container-fluid col-xs-12 col-sm-6 col-xs-offset-1 poll-body" ng-controller="pollDisplay">
+<div style="top:50%;" style="font-weight:bold; font-size:40px" ng-repeat="poll in polls track by $index">
+<img src="{{poll.picture}}" style="border-radius:50%;display:inline;">
+<a href=# style="display:inline;">{{poll.name}}</a>                
+<h3 class="question-color"><img class="disp-inline img-responsive question-logo-img" src="/data/image/von.png">: {{poll.question}}</h3>
+<ul style="list-style: none;">
+<li ng-repeat="option in poll.options track by $index"><i class="fa fa-chevron-right" ng-show="poll.chosen===option"></i> <input type="radio" name="poll_{{poll.$index}}" value="{{option}}" ng-model="poll.chosen"/>{{option}}</li>
+
+</ul>
+<button style="float:right;" type="button" class="btn btn-primary" ng-click="saveVoteResponse">Vote</button><br><hr>
+</div>
+
+</div>-->
+        <div class="container-fluid disp-flex disp-column mar-auto poll-body" ng-controller="pollDisplay" >
+            <div class="container-fluid disp-flex disp-column mar-auto poll-body" scroll-to-bottom on-scroll-bottom="loadMoreResults()" bottom-scroll-offset="1800" on-body-scroll="true">
+                <!--Card-->
+                <div class="card card-margin-poll col-md-6 col-xs-10 mar-auto z-depth-3" ng-repeat="poll in polls track by $index">
+
+                    <div class="upper-div user-img-back"></div>
+                    <div class="avatar waves-effect"><img src="{{poll.picture}}" class="img-circle img-responsive poll-user-photo-width" style="width:110px; height:110px;">
+                    </div>
+                    <!--Card content-->
+                    <div class="card-block" style="position:relative;">
+                        <div class = "container disp-inline " style="position: relative;float:left;margin-left: 94%;">
+
+                            <div class = "circle-bg" id="circle-bg-{{$index}}">
+                                <i class = "icon fa fa-share-alt "> </i>
+                            </div>
+
+                            <div class = "outer-icons" id="circle-bg-{{$index}}">
+                                <a target="_blank" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fvonsei.com%2F%23%2F{{poll.id}}&text={{poll.question | limitTo : 90}}"
+                                   onclick="window.open('this.href','_self','targetWindow',
+                                            'toolbar=yes,scrollbars=yes,resizable=yes,width=680,
+                                            height=400');return false;"><i class = "one fa fa-twitter" > </i></a>
+                                <a target="_blank" href="https://www.facebook.com/dialog/feed?app_id=1589897967980781&link=http%3A%2F%2Fvonsei.com%2F%23%2F{{poll.id}}&description={{poll.question}}&name=%40vonsei%20question&redirect_uri=http%3A%2F%2Fwww.facebook.com%2F"
+                                   onclick="window.open('this.href','_self','targetWindow',
+                                            'toolbar=yes,scrollbars=yes,resizable=yes,width=680,
+                                            height=400');return false;"><i class = "two fa fa-facebook-official"> </i></a>
+                                <a target="_blank" href="https://plus.google.com/share?url=http://vonsei.com/#/{{poll.id}}"
+                                   onclick="window.open('this.href','_self','targetWindow',
+                                            'toolbar=yes,scrollbars=yes,resizable=yes,width=680,
+                                            height=400');return false;"><i class = "three fa fa-google-plus"> </i></a>
+                                <!--<a target="_blank"  data-action="share/whatsapp/share" href="whatsapp://send?text=vonsei.com%2F%23%2F{{encodeURIComponent(poll.id)}}"
+onclick="window.open('this.href','_self','targetWindow',
+'toolbar=yes,scrollbars=yes,resizable=yes,width=680,
+height=400');return false; " ><i class = "four fa fa-whatsapp"> </i></a>-->
+                            </div> 
+
+                        </div>
+                        <!--Name-->
+                        <h4 class="card-user">{{poll.name}}</h4>
+                        <hr>
+                        <!--Title-->
+                        <h4 class="card-title question-color" style="word-wrap: break-word;"><img class="disp-inline img-responsive question-logo-img" src="/data/image/von.png">: <span ng-bind-html="poll.question | unsafe"></span></h4>
+                        <!--Text-->
+
+                        <ul style="list-style: none;padding: 2px 50px;" class="card-text" ng-hide="poll.voted">
+                            <li ng-repeat="option in poll.options track by $index">
+                                <i class="fa fa-chevron-right" ng-show="selectedPoll.chosen===option"></i> <input type="radio" name="poll_{{poll.$index}}" value="{{option}}" ng-model="selectedPoll.chosen"> {{option}} 
+                            </li>
+
+                        </ul>
+                        <ul style="list-style: none;padding: 2px 50px;" class="card-text" ng-show="poll.voted">
+                            <li ng-repeat="count in poll.optionCount track by $index">
+                                <strong>{{$index+1}}) {{poll.options[$index]}}</strong>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{((count/poll.totalCount)*100).toFixed(2)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(count/poll.totalCount)*100}}%;">
+                                        {{((count/poll.totalCount)*100).toFixed(2)}}%
+                                    </div></div></li>
+                            <li>
+                                <img class="img-responsive" src="/data/image/locked.gif" style="width: 155px;height: 65px;float: right;"/>
+                            </li>
+                        </ul>
+                        <ul ng-hide="poll.voted">
+                            <li>
+                                <div style="height:35px" >
+                                    <a class="btn btn-primary pull-right waves-effect" ng-click="saveOption($index)" >Vote</a>
+                                </div></li></ul>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <tr>
+                                <th class="col-xs-12 col-sm-4" style="padding-left: 15%;">
+                                    <a href='javascript:;' onclick='changeColor(this.id)' ng-show="liked"> &nbsp;&nbsp;<i class="fa fa-thumbs-o-up" aria-hidden="true" id="like" ></i><br>Like </a>
+                                    
+                                    <a href='javascript:;' onclick='changeColor(this.id)' ng-hide="liked"> &nbsp;&nbsp;<i class="fa fa-thumbs-up" aria-hidden="true" id="liked" ></i><br>Like </a>
+                                </th>
+                                <th class="col-xs-12 col-sm-4" style="padding-left: 12%;">
+                                    <a href='javascript:;' onclick='changeColor(this.id)' ng-hide="unliked"> &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down" aria-hidden="true" id="dislike" ></i><br> Dislike</a>
+                                    
+                                    <a href='javascript:;' onclick='changeColor(this.id)' ng-hide="unliked"> &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-down" aria-hidden="true" id="disliked" ></i><br> Dislike</a>
+                                </th>
+                                <th class="col-xs-12 col-sm-4" style="padding-left: 11%;">
+                                    <a href='javascript:;' onclick='changeColor(this.id)' ng-show="pinched"> &nbsp;&nbsp;&nbsp;&nbsp;&emsp;<i class="fa fa-hand-paper-o" aria-hidden="true" id="pinch" ng-show="pinched"></i><br> Same Pinch</a>
+                                    
+                                    <a href='javascript:;' onclick='changeColor(this.id)' ng-hide="pinched"> &nbsp;&nbsp;&nbsp;&nbsp;&emsp;<i class="fa fa-hand-rock-o" aria-hidden="true" id="pinched" ></i><br> Same Pinch</a>
+                                </th>
+                            </tr>
+
+                        </table>
+                    </div>                
+                    <!--/.Card content-->
+                    <h3>Comment</h3>
+                    <div class="comment-box">                        
+                        <div class="comment" ng-repeat="comment in poll.comment track by $index">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{poll.name}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <span ng-bind-html="comment | unsafe"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <textarea required ng-model="user.comment" class="form-control" rows="2" id="comment"></textarea>
+                            <button style="float:right;" type="button" class="btn btn-primary"  ng-click="addComment($index)" >BeepOut</button>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Card-->
+            </div>
+        </div>
+    </div>
+
+    <div id="mypoll" class="modal fade" role="dialog" ng-controller="pollQuestionDisplay">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create Poll</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="question">Question:</label>
+                        <textarea required ng-model="question" class="form-control" rows="2" id="question"></textarea>
+                        <br>
+                        <label for="tags"></label><span style="display:inline;">Tags: <i class="fa fa-tags fa-lg" aria-hidden="true" ></i></span> <h4 style="display:inline;"><small >(ex: Sports,Politics,Inside_Office)</small></h4>
+                        <br>
+                        <input ng-model="tags" type=text class="form-control" id="tags" placeholder=sports,cricket,football />           
+                        <label for="option">Option:</label><br>
+
+                        <input style="width: 95%; display:inline;float:left;" ng-model="option" type=text class="form-control" id="option" />
+                    </div>
+                    <br>
+                    <a href="#" style="float:right; display:inline;" id="parent"><i class="fa fa-plus fa-2x" id="add-option-btn" ng-click="addOption()" ></i></a><br/>
+                    <ul style="list-style: none; padding-left: 0px;"  >
+                        <li ng-repeat="option in options track by $index" style="width:80%;">
+                            <table> <tr>  
+                                <label for="option">Option {{$index+1}}:</label>
+                                <td> <input size="80" ng-model="option" type=text class="form-control" id="option-{{$index}}" ng-change="editOption($index,option)"/></td>
+                                <td><button ng-click="removeOption($index);" style="float:right;" type="button" class="btn btn-danger">Delete</button></td>
+                                </tr> </table>
+
+                        </li></ul>
+                    <br>
+                    <input ng-model="anonymous" type="checkbox" id="anonymous"/> Go Anonymous (Your identity wont be discolsed.)
+
+                    <!-- <script>
+$(function(){
+var count = 3;
+$('#parent').click(function(){
+$('#option').append('<div id="option'+count+'"><label for="Option'+count+'">"Option' +count+'":</label><input type=text class="form-control" id="Option' +count+'" />
+</div>');
+count++;
+)});
+});
+</script>-->
+
+                </div>
+                <div class="modal-footer">
+                    <button style="float:left;" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button style="float:right;" type="button" class="btn btn-primary" ng-click="sendPollQuestion()" >Post</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="mylogin" class="modal fade" role="dialog" ng-controller="pollQuestionDisplay">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="text-align:center;">Vonsei Login</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group login-button">
+                        <!--<label for="fblogin"></label>
+<fb:login-button style="float:left;" scope="public_profile,email" onlogin="checkLoginState();" ng-controller="login" id="fbloginButton"  data-max-rows="10" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true">
+</fb:login-button>
+
+<label for="glogin"></label>
+
+<div style="float:right;" id="gSignIn" ng-controller="login"></div>-->
+                        <a class="btn btn-lg btn-block facebook" ng-controller="login" id="fbloginButton" onclick="fbLogin()"><i class="fa fa-facebook left"  > &nbsp; LOGIN WITH FACEBOOK</i></a>
+                        <a class="btn btn-lg btn-block google" ng-controller="login" id="signInGoogle" onclick="startApp()"><i class="fa fa-google left">&nbsp; LOGIN WITH GOOGLE</i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
